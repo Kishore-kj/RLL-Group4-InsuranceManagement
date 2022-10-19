@@ -1,0 +1,18 @@
+<app-adminheader></app-adminheader>
+ <h2 class="heading"> Category List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Category Name</th>
+            <th> Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let category of categories" >
+            <td> {{ category.category}} </td>
+            <td><button class="btn btn-danger" (click)="deleteCategory(category)" type="submit">Delete</button></td>
+        
+        </tr>
+    </tbody>
+</table>
+<app-footer></app-footer>

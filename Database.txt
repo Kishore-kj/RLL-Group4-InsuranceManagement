@@ -1,0 +1,3 @@
+Enter this into admin table:
+
+INSERT INTO `insurance`.`admin` (`aid`, `password`, `username`) VALUES ('1', 'admin', 'admin');

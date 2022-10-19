@@ -1,0 +1,13 @@
+.img{
+  width: 100%;
+  height: 90vh;
+}
+pre{
+ position: fixed;
+ left: 2ch;
+ top: 20ch;
+ color: #E1DAD2;
+ font-size: 30px;
+ font-weight: bolder;
+ font-style: italic;
+}

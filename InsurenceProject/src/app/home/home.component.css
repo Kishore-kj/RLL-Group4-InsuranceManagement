@@ -1,0 +1,41 @@
+.img {
+  background-color: rgb(43, 44, 44);
+  width: 100%;
+  height: 90vh;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Poppins", sans-serif
+}
+/* You can add global styles to this file, and also import other style files */
+body{
+  background:url();
+  background-size:cover;
+  background-position:relative;
+}
+
+
+.w3-half img {
+  margin-bottom: -6px;
+  margin-top: 16px;
+  opacity: 0.8;
+  cursor: pointer
+}
+
+.w3-half img:hover {
+  opacity: 1
+}
+footer {
+
+  position: absolute;
+  
+  bottom: 0;
+  
+  width: 100%;
+  
+  }

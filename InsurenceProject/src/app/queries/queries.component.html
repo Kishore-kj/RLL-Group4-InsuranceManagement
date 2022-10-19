@@ -1,0 +1,25 @@
+<app-adminheader></app-adminheader>
+
+<h1 class="heading">Queries</h1>
+
+<table id="customers">
+ <thead>
+  <tr>
+    <th>User Name</th>
+    <th>Query Id</th>
+    <th>Email</th>
+    <th>Question</th>
+  </tr>
+</thead>   
+<tbody>
+     <tr *ngFor="let question of questions">
+         <td>{{question.userName}}</td>
+         <td>{{question.queryid}}</td>
+         <td>{{question.mailid}}</td>
+         <td>{{question.question}}</td>
+         <!--(click)="send(query.answer)"-->
+    </tr>  
+
+</tbody>
+</table>
+<app-footer></app-footer>

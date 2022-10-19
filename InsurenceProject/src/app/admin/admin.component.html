@@ -1,0 +1,33 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+
+<div class="bgimage" style="width: 100%; height: 695px;">
+    <div class="admin-main">
+        <h1 style="color: rgb(245, 237, 237); padding-top: 35px;">Admin Login</h1><br>
+        <h3 style="color: rgb(249, 245, 245);">Please Login to proceed</h3><br><br>
+
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+
+            <div class="login-div" align="center">
+                <table class="loginform">
+                    <tr>
+                        <td><label for="username">Username: &nbsp;</label></td>
+                        <td><input type="username" id="username" name="username" class="form-control is-invalid" required #name="ngModel" class="searchTextField" placeholder="Enter Username" [(ngModel)]="adminModel.username">
+                        </td>
+                    </tr><br>
+                    <tr>
+                        <td><label for="password">Password: </label></td>
+                        <td><input type="password" id="password" name="password" required #password="ngModel" [class.is-invalid]="password.invalid && password.touched" class="form-control" class="searchTextField" placeholder="Enter Password" [(ngModel)]="adminModel.password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><br>
+                            <input type="submit" [disabled]="f.form.invalid" value="Login" class="actionBtn"></td>
+                </table>
+            </div>
+        </form>
+        <br>
+    </div>
+
+</div>
+<app-footer></app-footer>

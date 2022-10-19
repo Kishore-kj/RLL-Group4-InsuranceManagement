@@ -1,0 +1,42 @@
+<app-adminheader></app-adminheader>
+<body background-color: #B1CBBF;>
+  <form #adminForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+      <h2 class="form-heading"> Update policy details </h2>
+      <div class="row">
+        <div class="col-25">
+          <label >Policy Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fname"  name="policyName" placeholder="Enter the policy name" [(ngModel)]="policies.policyName">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="Email">Policy Type</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="Email" name="category" placeholder="Enter the policy type" [(ngModel)]="policies.category">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fromdate">Policy cost</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fromdate" name="amount" placeholder="Enter the cost of policy" [(ngModel)]="policies.amount">
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-25">
+            <label for="todate">Policy tenure</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="todate" name="tenure" placeholder="Enter the tenure" [(ngModel)]="policies.tenureInYears">
+          </div>
+        </div>
+      <div class="row row1">
+        <input style="background-color: skyblue;"type="submit" value="Update">
+      </div>
+    </form>
+</body>
+<app-footer></app-footer>

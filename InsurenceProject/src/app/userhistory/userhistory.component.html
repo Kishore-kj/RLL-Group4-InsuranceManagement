@@ -1,0 +1,30 @@
+<app-userheader></app-userheader>
+<h1 class="heading">Customer History</h1>
+
+<table id="customers">
+ <thead>
+  <tr>
+    <th>Username</th>
+    <th>PolicyId</th>
+    <th>Date</th>
+     <th>Status</th>
+    
+  
+  </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let book of books">
+        <td>{{book.userName}}</td>
+         <td>{{book.policyId}}</td>
+         <td>{{book.date | date : 'shortDate'}}</td>
+         <td style="color: green;">{{book.status}}</td>
+    </tr>
+    <tr *ngFor="let policy of policies">
+        <td>{{policy.userName}}</td>
+         <td>{{policy.policyId}}</td>
+         <td>{{policy.date | date : 'shortDate'}}</td>
+         <td style="color: red;">{{policy.status}}</td>
+    </tr>
+</tbody>
+</table>
+<app-footer></app-footer>

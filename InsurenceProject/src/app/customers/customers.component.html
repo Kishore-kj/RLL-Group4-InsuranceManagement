@@ -1,0 +1,28 @@
+<app-adminheader></app-adminheader>
+
+<h1 class="heading">Customer Requests</h1>
+
+<table id="customers">
+ <thead>
+  <tr>
+    <th>Username</th>
+    <th>PolicyId</th>
+    <th>Date</th>
+     <th>Status</th>
+    <th colspan="2"></th> 
+  
+  </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let book of books">
+        <td>{{book.userName}}</td>
+         <td>{{book.policyId}}</td>
+         <td>{{book.date | date : 'shortDate'}}</td>
+         <td>pending</td>
+
+         <td><button  *ngIf="show" (click)="approve(book.userName,book.policyId)" class="btn" id="button1"  type="submit">Approve</button> <p *ngIf = "approved" style="color: green;">Approved</p></td>
+         <td><button *ngIf="show" (click)="disapprove(book.userName,book.policyId)" class="btn" id="button2" style="background-color: rgb(199, 35, 35); color: white;"  type="submit" >Disapprove</button><p *ngIf = "disapproved" style="color: red;">Dispproved</p></td>
+    </tr>
+</tbody>
+</table>
+<app-footer></app-footer>

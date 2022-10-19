@@ -1,0 +1,79 @@
+body {
+  background-color: white;
+}
+
+.admin-main {
+  color: #f8f6f4;
+  margin: 0px 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.actionBtn {
+  margin-left: 80px;
+  background-color: #0d0d0d;
+  ;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 12pt;
+  border: none;
+  width: 82px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actionBtn:hover {
+  background-color: #cf7653;
+}
+
+.searchTextField {
+  height: 30px;
+  width: 170px;
+  border-radius: 5px;
+  padding-left: 5px
+}
+
+.loginForm {
+  background-color: white;
+  border-spacing: 15px;
+  padding: 10px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.login-div {
+  margin: auto;
+  height: auto;
+  width: 600px;
+}
+
+.bgimage {
+  background: url("https://static.vecteezy.com/system/resources/previews/001/987/871/original/abstract-black-stripes-diagonal-background-free-vector.jpg");
+  background-size: cover;
+}
+
+h3>a {
+  color: rgb(255, 251, 251);
+}
+
+.actionBtn:hover {
+  background-color: #cf9b53;
+}
+
+.searchTextField {
+  height: 30px;
+  width: 170px;
+  border-radius: 5px;
+  padding-left: 5px
+}
+
+footer {
+
+  position: absolute;
+  
+  bottom: 0;
+  
+  width: 100%;
+  
+  }

@@ -1,0 +1,17 @@
+#footer a {
+    text-decoration: none;
+    color: white;
+}
+i{
+    margin-left: 5px;
+}
+footer {
+
+    position: absolute;
+    
+    bottom: 0;
+    
+    width: 100%;
+    
+    }
+    

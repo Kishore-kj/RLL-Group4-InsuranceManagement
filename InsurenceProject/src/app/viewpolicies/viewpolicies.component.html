@@ -1,0 +1,32 @@
+<app-adminheader></app-adminheader>
+
+<h1 class="heading">Policies List</h1>
+
+<table id="customers">
+ <thead>
+  <tr>
+    <th>Id</th>
+    <th>Policy Name</th>
+    <th>Category</th>
+    <th>Amount</th>
+    <th>Tenure</th>
+    <th>Action</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let book of books">
+         <td>{{book.policyId}}</td>
+         <td>{{book.policyName}}</td>
+         <td>{{book.category}}</td>
+         <td>{{book.amount}}</td>
+         <td>{{book.tenureInYears}}</td>
+        <td><button class="btn btn-danger" (click)="deletePolicy(book)" type="submit">Delete</button></td>
+         <td><button class="btn btn-warning" (click)="updatePolicy(book.policyId)" type="submit">Update</button></td>
+    </tr>
+
+</tbody>
+</table>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,26 @@
+<app-userheader></app-userheader>
+<div class="container-fluid">
+  <h2 style="text-align: center;margin-top: 30px;">Questions</h2>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <label style="margin-top: 10px;" >User name</label>
+      <input type="text" required #name="ngModel" [class.is-invalid]="name.invalid && name.touched" name="userName" class="form-control" [(ngModel)]="queriesModel.userName">
+    </div>
+
+    <div class="form-group">
+      <label style="margin-top: 10px;">Query ID</label>
+      <input type="text" required #queryid="ngModel" [class.is-invalid]="queryid.invalid && queryid.touched" name="queryid" class="form-control" [(ngModel)]="queriesModel.queryid">
+    </div>
+    <div class="form-group">
+      <label style="margin-top: 10px;">Email</label>
+      <input type="email"  required #email="ngModel" [class.is-invalid]="email.invalid && email.touched" name="email" class="form-control" [(ngModel)]="queriesModel.mailid">
+    </div>
+    <div class="form-group">
+      <label style="margin-top: 10px;" >Question</label>
+      <textarea name="question"  cols="40" rows="2" #question="ngModel" [class.is-invalid]="question.invalid && question.touched" class="form-control" [(ngModel)]="queriesModel.question"></textarea>
+      <!--<input type="Text" #question="ngModel"  [class.is-invalid]="question.invalid && question.touched" name="question" class="form-control" [(ngModel)]="queriesModel.question">-->
+    </div>
+
+    <button [disabled]="userForm.form.invalid" class="btn btn-success" type="submit">Submit</button>
+  </form>
+</div>

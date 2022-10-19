@@ -1,0 +1,28 @@
+.bgimage {
+  background: url("https://static.vecteezy.com/system/resources/previews/001/987/871/original/abstract-black-stripes-diagonal-background-free-vector.jpg");
+  background-size: cover;
+}
+
+.form-group {
+  
+  width: 50%;
+}
+
+.btn {
+  margin: 20px;
+}
+
+form {
+  color: #f8f6f4;
+  
+  margin-left: 450px;
+}
+footer {
+
+  position: absolute;
+  
+  bottom: 0;
+  
+  width: 100%;
+  
+  }
