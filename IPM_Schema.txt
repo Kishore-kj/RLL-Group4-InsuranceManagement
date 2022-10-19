@@ -1,0 +1,348 @@
+mysql> create database insurance;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> use insurance;
+Database changed
+mysql> show tables;
+Empty set (0.01 sec)
+
+mysql> show tables;
++---------------------------+
+| Tables_in_insurance       |
++---------------------------+
+| admin                     |
+| approvals                 |
+| approved                  |
+| category                  |
+| disapproved               |
+| hibernate_sequence        |
+| policies                  |
+| queries                   |
+| spring_session            |
+| spring_session_attributes |
+| user                      |
++---------------------------+
+11 rows in set (0.00 sec)
+
+mysql> desc admin;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| aid      | varchar(255) | NO   | PRI | NULL    |       |
+| password | varchar(255) | YES  |     | NULL    |       |
+| username | varchar(255) | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> desc approvals;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| user_name  | varchar(255) | NO   | PRI | NULL    |       |
+| date       | datetime(6)  | YES  |     | NULL    |       |
+| policy_id  | int          | YES  |     | NULL    |       |
+| request_id | int          | YES  |     | NULL    |       |
+| status     | varchar(255) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> desc approved;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| user_name  | varchar(255) | NO   | PRI | NULL    |       |
+| date       | datetime(6)  | YES  |     | NULL    |       |
+| policy_id  | int          | YES  |     | NULL    |       |
+| request_id | int          | YES  |     | NULL    |       |
+| status     | varchar(255) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> desc category;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| category | varchar(255) | NO   | PRI | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc disapproved;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| user_name  | varchar(255) | NO   | PRI | NULL    |       |
+| date       | datetime(6)  | YES  |     | NULL    |       |
+| policy_id  | int          | YES  |     | NULL    |       |
+| request_id | int          | YES  |     | NULL    |       |
+| status     | varchar(255) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> desc policies;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| policy_id       | int          | NO   | PRI | NULL    |       |
+| amount          | double       | YES  |     | NULL    |       |
+| category        | varchar(255) | YES  |     | NULL    |       |
+| policy_name     | varchar(255) | YES  |     | NULL    |       |
+| tenure_in_years | int          | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> desc queries;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| user_name | varchar(255) | NO   | PRI | NULL    |       |
+| mailid    | varchar(255) | YES  |     | NULL    |       |
+| queryid   | varchar(255) | YES  |     | NULL    |       |
+| question  | varchar(255) | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc user;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| user_name | varchar(255) | NO   | PRI | NULL    |       |
+| password  | varchar(255) | YES  |     | NULL    |       |
+| email     | varchar(255) | YES  |     | NULL    |       |
+| mobile    | bigint       | YES  |     | NULL    |       |
+| user_id   | int          | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert into admin(aid,username,password)values('1','admin','admin');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from admin;
++-----+----------+----------+
+| aid | password | username |
++-----+----------+----------+
+| 1   | admin    | admin    |
++-----+----------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from user;
++-----------+----------+-------------------+------------+---------+
+| user_name | password | email             | mobile     | user_id |
++-----------+----------+-------------------+------------+---------+
+| himaja    | himaja   | hima@gmail.com    | 6789123903 |       0 |
+| kavya     | kavya    | kavya@gmail.com   | 7890189023 |       0 |
+| kishore   | 654321   | kishore@yahoo.com | 9123456789 |       1 |
+| mansi     | mansi    | mansi@gmail.com   | 7893012356 |       0 |
+| mounika   | mounika  | mounika@gmail.com | 7812346789 |       0 |
+| sanofer   | sanofer  | sanofer@gmail.com | 9802135678 |       0 |
++-----------+----------+-------------------+------------+---------+
+6 rows in set (0.01 sec)
+mysql> select * from category;
++----------+
+| category |
++----------+
+| Health   |
+| Life     |
+| Motor    |
+| Travel   |
++----------+
+4 rows in set (0.01 sec)
+
+mysql> select * from approvals;
++-----------+----------------------------+-----------+------------+---------+
+| user_name | date                       | policy_id | request_id | status  |
++-----------+----------------------------+-----------+------------+---------+
+| mansi     | 2022-10-19 21:55:24.261000 |         5 |       NULL | pending |
++-----------+----------------------------+-----------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from approved;
++-----------+----------------------------+-----------+------------+----------+
+| user_name | date                       | policy_id | request_id | status   |
++-----------+----------------------------+-----------+------------+----------+
+| himaja    | 2022-10-19 20:43:46.872000 |         1 |       NULL | approved |
+| kishore   | 2022-10-19 21:01:08.434000 |         5 |          2 | Success  |
+| mounika   | 2022-10-19 21:56:07.280000 |         3 |       NULL | approved |
++-----------+----------------------------+-----------+------------+----------+
+3 rows in set (0.00 sec)
+
+mysql> select * from policies;
++-----------+--------+-----------+---------------------------+-----------------+
+| policy_id | amount | category  | policy_name               | tenure_in_years |
++-----------+--------+-----------+---------------------------+-----------------+
+|         1 | 200000 | Health    | LIC                       |               5 |
+|         3 | 500000 | Life      | SBI Life Insurance        |               3 |
+|         4 | 100000 | Vehicle   | TVS Motors                |               1 |
+|         5 | 700000 | Life      | HDFC Life Insurance       |               4 |
+|         6 | 150000 | Travel    | National Travel Insurance |               2 |
+|         7 | 200000 | Insurance | Domestic Travel Insurance |               1 |
++-----------+--------+-----------+---------------------------+-----------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from queries;
++-----------+-------------------+---------+-----------------------------------------------+
+| user_name | mailid            | queryid | question                                      |
++-----------+-------------------+---------+-----------------------------------------------+
+| himaja    | hima@gmail.com    | 1       | what                                          |
+| kishore   | NULL              | 12      | Appupdate                                     |
+| Mounika   | mounika@gmail.com | 1       | What is the procedure for issuing the policy? |
++-----------+-------------------+---------+-----------------------------------------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from disapproved;
++-----------+----------------------------+-----------+------------+-------------+
+| user_name | date                       | policy_id | request_id | status      |
++-----------+----------------------------+-----------+------------+-------------+
+| kavya     | 2022-10-19 20:45:40.432000 |         1 |       NULL | disapproved |
+| kishore   | 2022-10-19 21:54:38.421000 |        10 |       NULL | disapproved |
++-----------+----------------------------+-----------+------------+-------------+
+2 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
